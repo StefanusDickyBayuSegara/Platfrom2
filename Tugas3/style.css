@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333333;
+    display: grid;
+    background-image: url(image/Background\ Ramadan.jpg);
+}
+
+header {
+    background-image: url(image/Background\ Ramandan3.jpg);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    grid-row: 1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    align-items: center;
+}
+
+.navbar span {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+.Green {
+    color: green;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .Ramen {
+    display: none;
+}
+
+.lists {
+    display: none;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    margin: 0 5px;
+}
+
+.navbar ul li a:hover {
+    text-shadow: 0 0 20px rgb(55, 184, 15);
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    grid-row: 2;
+    display: grid;
+}
+
+.food-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.Toko-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.food-item img {
+    max-width: 200px;
+    max-height: 150px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+footer {
+    background-image: url(image/Background\ Ramandan3.jpg);
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    grid-row: 3;
+    
+}

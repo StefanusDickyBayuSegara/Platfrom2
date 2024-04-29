@@ -1,0 +1,59 @@
+.cover {
+    border-radius: 10px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    backdrop-filter: blur(50px);
+    box-shadow: rgb(107, 84, 84) 20px 20px 70px;
+    width: 500px;
+    height: 80px;
+}
+
+#daftar {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: blueviolet;
+    font-size: 30px;
+    width: 350px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+
+}
+
+#status {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hapus {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logout {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+#log {
+    display: flex;
+    justify-content: end;
+}

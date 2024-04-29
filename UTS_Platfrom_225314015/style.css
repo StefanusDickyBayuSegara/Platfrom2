@@ -1,0 +1,36 @@
+
+
+.jumbotron {
+  padding-top: 6rem ;
+  background-color:gray;
+}
+#kisahku{
+  background-color: white;
+}
+#pendidikan{
+  background-color: gray;
+}
+#tugas{
+  background-color: gray;
+
+}
+section{
+  padding-top: 5rem;
+}
+.card-img-top {
+  width: 100%;
+  height: 500px; /* Sesuaikan tinggi dengan kebutuhan */
+  object-fit: cover; /* Memastikan gambar sesuai dengan ukuran yang ditetapkan */
+  transition: transform 0.5s;
+}
+.card-img-top:hover {
+  transform: scale(1.1);
+}
+.ratakan {
+  width: 100%;
+  text-align: justify;
+}
+/* CSS */
+.navbar-dark .navbar-nav .nav-link.active {
+  color: black; /* Warna teks saat aktif */
+}

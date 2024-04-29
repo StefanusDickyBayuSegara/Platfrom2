@@ -1,0 +1,85 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('image/background_body1.jpeg');
+    background-size: cover;
+}
+.container {
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header {
+    background-image: url('image/Background 1.jpeg');
+    background-color: #333;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 20px;
+}
+.header h1 {
+    margin: 0;
+    padding: 10px;
+}
+.header p {
+    margin: 0;
+    padding: 5px;
+}
+.foto-profil {
+    text-align: center;
+}
+.foto-profil img {
+    border-radius: 50%;
+    margin-top: 10px;
+}
+form {
+    margin-bottom: 20px;
+}
+input[type="text"],
+input[type="number"],
+input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="submit"] {
+    background-color: #4c8caf;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #4c8caf;
+}
+.options {
+    display: none;
+}
+.options label {
+    display: block;
+    margin-bottom: 5px;
+}
+.result {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.radio-group {
+    margin-top: 20px;
+}
+.radio-item {
+    margin-bottom: 5px;
+}
