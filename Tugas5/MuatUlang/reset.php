@@ -3,15 +3,15 @@
 session_start();
 
 // Sambungkan ke database Anda di sini
-$db = mysqli_connect("localhost", "root", "", "platfrom");
+$db = mysqli_connect("localhost", "root", "", "platfrom2");
 
 if (isset($_POST["submit"])) {
     $username = $_POST["username"];
-    $old_password = $_POST['old_password'];
+    $MuatUlang_password = $_POST['MuatUlang_password'];
     $new_password = $_POST['new_password'];
 
     // Query untuk mencari mahasiswa dengan nama yang sesuai
-    $query = "SELECT * FROM mahasiswa WHERE nama = '$username' AND nim = '$old_password'";
+    $query = "SELECT * FROM mahasiswa WHERE nama = '$username' AND nim = '$MuatUlang_password'";
     $result = mysqli_query($db, $query);
 
     if (mysqli_num_rows($result) > 0) {
@@ -39,14 +39,14 @@ if (isset($_POST["submit"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password Mahasiswa</title>
-    <link rel="stylesheet" href="reset.css">
+    <title>MuatUlang Password Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <form method="post">
-        <h1>Reset Password</h1>
+        <h1>MuatUlang Password</h1>
 
         <?php if (isset($error)) : ?>
             <p><?php echo $error; ?></p>
@@ -58,9 +58,9 @@ if (isset($_POST["submit"])) {
 
         <label for="username">Username : </label>
         <input type="text" name="username" id="username">
-        <label for="old_password">Old Password : </label>
-        <input type="password" name="old_password" id="old_password">
-        <label for="new_password">New Password : </label>
+        <label for="MuatUlang_password">Password lama: </label>
+        <input type="password" name="MuatUlang_password" id="MuatUlang_password">
+        <label for="new_password">Password Baru: </label>
         <input type="password" name="new_password" id="new_password">
         <button type="submit" name="submit">Reset Password</button>
 

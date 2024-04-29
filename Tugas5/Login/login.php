@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
             $_SESSION["username"] = $username;
 
             // Alihkan ke halaman admin
-            header("Location: ../Home/admin.php");
+            header("Location: ../Halaman/admin.php");
             exit;
         } else {
             $error = "Password salah!";
@@ -40,7 +40,7 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Mahasiswa</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -59,7 +59,7 @@ if (isset($_POST["submit"])) {
         <button type="submit" name="submit">Login</button>
 
         <!-- Link ke halaman reset password -->
-        <p><a href="../Reset/reset.php">Lupa password?</a></p>
+        <p><a href="../MuatUlang/reset.php">Lupa password?</a></p>
 
     </form>
 </body>
