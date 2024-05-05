@@ -20,6 +20,19 @@ $result = getTasks($mahasiswa_id);
 </head>
 
 <body>
+    <header style="display: flex; justify-content: center;">
+        <!-- Header with Name, Nim, and Foto -->
+        <header class="header mt-5 rounded">
+            <div class="info-profil">
+                <h1>Stefanus Dicky Bayu Segara</h1>
+                <p>NIM: 225314015</p>
+            </div>
+            
+            <div class="foto-profil">
+                <img src="image/Foto ku.jpg" alt="foto-profil"  width="300" height="400">
+            </div>
+        </header>
+        
     <div class="container">
         <h1>Selamat Datang Di Web Kami <?php echo $nama; ?>!</h1>
         <h2>Daftar Tugas:</h2>
@@ -58,7 +71,7 @@ $result = getTasks($mahasiswa_id);
                 </li>
             <?php endwhile; ?>
         </ul>
-        <a href="../Login/logout.php" class="logout-button"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</a>
+        <a href="../Login/logout.php" class="logout-button"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Keluar</a>
     </div>
     <script src="admin.js"></script>
 </body>

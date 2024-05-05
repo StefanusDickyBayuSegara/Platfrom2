@@ -1,26 +1,26 @@
 <?php
-// Mulai sesi
+
 session_start();
 
-// Sambungkan ke database Anda di sini
+// menyambungkan ke database 
 $db = mysqli_connect("localhost", "root", "", "platfrom2");
 
 if (isset($_POST["submit"])) {
     $username = $_POST["username"];
     $password = $_POST['password'];
 
-    // Query untuk mencari mahasiswa dengan nama dan NIM yang sesuai
+    //mencari mahasiswa dengan nama dan NIM yang di tentukan
     $query = "SELECT * FROM mahasiswa WHERE nama = '$username'";
     $result = mysqli_query($db, $query);
 
     if (mysqli_num_rows($result) > 0) {
         $user = mysqli_fetch_assoc($result);
-        // Verifikasi password
+        // MemVerifikasi password yang di miliki
         if ($password == $user['nim']) {
-            // Jika mahasiswa ditemukan, simpan username ke dalam sesi
+            // Jika mahasiswa ditemukan maka akan menyimpan username ke dalam session
             $_SESSION["username"] = $username;
 
-            // Alihkan ke halaman admin
+           
             header("Location: ../Halaman/admin.php");
             exit;
         } else {
