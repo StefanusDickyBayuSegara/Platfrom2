@@ -1,13 +1,13 @@
 <?php
-// Mulai sesi
+
 session_start();
 
-// Sambungkan ke database Anda di sini
+// menyambungkan ke database 
 $db = mysqli_connect("localhost", "root", "", "platfrom2");
 
 function checkSession() {
     if (!isset($_SESSION["username"])) {
-        // Jika belum, alihkan ke halaman login
+        // Jika belum bisa maka di alihkan ke halaman untuk Login
         header("Location: login.php");
         exit;
     }
@@ -15,10 +15,10 @@ function checkSession() {
 
 function getNama() {
     global $db;
-    // Dapatkan nama dari sesi
+ 
     $nama = $_SESSION["username"];
 
-    // Pertama, dapatkan id mahasiswa dari tabel mahasiswa
+    //Langkah  Pertama,tentukan dan miliki id mahasiswa dari tabel mahasiswa_usd
     $query = "SELECT id FROM mahasiswa WHERE nama = '$nama'";
     $result = mysqli_query($db, $query);
     $row = mysqli_fetch_assoc($result);
@@ -29,35 +29,35 @@ function getNama() {
 
 function handlePostRequest() {
     global $db;
-    // Dapatkan id mahasiswa
+    // memiliki id mahasiswa
     list($nama, $mahasiswa_id) = getNama();
 
-    // Jika form ditambahkan, simpan tugas baru ke database
+    // Jika form yg dimiliki ditambahkan maka akan menyimpan tugas baru ke dalam database
     if (isset($_POST["add"])) {
         $task = $_POST["task"];
         if (empty($task)) {
-            return 'Tugas tidak boleh kosong!';
+            return 'Tugas anda tidak di izinkan atau diperbolegkan untuk kosong!';
         } else {
             $query = "INSERT INTO todolist (task, mahasiswa_id) VALUES ('$task', '$mahasiswa_id')";
             mysqli_query($db, $query);
         }
     }
 
-    // Jika form selesai disubmit, ubah status tugas
+    // Jika form yang kita isi telah selesai dan disubmit maka akan  menggubah status tugas yang dimiliki
     if (isset($_POST["done"])) {
         $id = $_POST["id"];
         $query = "UPDATE todolist SET status = '1' WHERE id = '$id'";
         mysqli_query($db, $query);
     }
 
-    // Jika form batal disubmit, ubah status tugas
+    // Jika form yang kita isi dibatalkan dan  disubmit maka akan mengguubah status tugas yang di miliki
     if (isset($_POST["cancel"])) {
         $id = $_POST["id"];
         $query = "UPDATE todolist SET status = '0' WHERE id = '$id'";
         mysqli_query($db, $query);
     }
 
-    // Jika form hapus disubmit, hapus tugas dari database
+    // Jika form yang kita isi dihapus dan  disubmit maka akan menghapus tugas yang di miliki dari database
     if (isset($_POST["delete"])) {
         $id = $_POST["id"];
         $query = "DELETE FROM todolist WHERE id = '$id'";
@@ -69,7 +69,8 @@ function handlePostRequest() {
 
 function getTasks($mahasiswa_id) {
     global $db;
-    // Kemudian, gunakan id mahasiswa untuk mendapatkan semua tugas dari pengguna yang sedang login
+    // Kemudian ,kita akan menggunakan id mahasiswa yang kita punya untuk mencari dan menemukan  semua tugas yang di miliki
+    // dari user  yang sedang terlogin
     $query = "SELECT * FROM todolist WHERE mahasiswa_id = '$mahasiswa_id'";
     $result = mysqli_query($db, $query);
 

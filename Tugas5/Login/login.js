@@ -3,7 +3,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
     var password = document.getElementById('password').value;
 
     if (username === '' || password === '') {
-        alert('Mohon isi semua form!');
+        alert('Mohon untuk mengisi semua form!');
         event.preventDefault();
     }
 });

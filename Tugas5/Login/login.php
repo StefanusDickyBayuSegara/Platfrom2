@@ -19,15 +19,14 @@ if (isset($_POST["submit"])) {
         if ($password == $user['nim']) {
             // Jika mahasiswa ditemukan maka akan menyimpan username ke dalam session
             $_SESSION["username"] = $username;
-
            
-            header("Location: ../Halaman/admin.php");
+            header("Location: ../Halaman/todolist.php");
             exit;
         } else {
-            $error = "Password salah!";
+            $error = "Password yang anda masukan tidak bener!";
         }
     } else {
-        $error = "Username tidak ditemukan!";
+        $error = "Username yang anda di cari tidak ada/ didapatkan!";
     }
 }
 ?>
@@ -39,27 +38,27 @@ if (isset($_POST["submit"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Mahasiswa</title>
+    <title>Login LMS Mahasiswa </title>
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
     <form action="" method="post">
-        <h1>Login Mahasiswa</h1>
+        <h1>Login LMS Mahasiswa</h1>
 
         <?php if (isset($error)) : ?>
             <p><?php echo $error; ?></p>
         <?php endif; ?>
 
-        <label for="username">Username : </label>
+        <label for="username">Masukan Username : </label>
         <input type="text" name="username" id="username">
-        <label for="password">Password : </label>
+        <label for="password">Masukan Password : </label>
         <input type="password" name="password" id="password">
         <button type="submit" name="submit">Login</button>
 
-        <!-- Link ke halaman reset password -->
-        <p><a href="../MuatUlang/reset.php">Lupa password?</a></p>
+        <!-- ke halaman MuatUlang password -->
+        <p><a href="../MuatUlang/muatulang.php">Klik Lupa/Perbarui password ?</a></p>
 
     </form>
 </body>

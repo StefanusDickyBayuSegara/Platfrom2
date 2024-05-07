@@ -1,8 +1,8 @@
 <?php
-// Mulai sesi
+
 session_start();
 
-// Sambungkan ke database Anda di sini
+// menyambungkan ke database 
 $db = mysqli_connect("localhost", "root", "", "platfrom2");
 
 if (isset($_POST["submit"])) {
@@ -10,20 +10,20 @@ if (isset($_POST["submit"])) {
     $MuatUlang_password = $_POST['MuatUlang_password'];
     $new_password = $_POST['new_password'];
 
-    // Query untuk mencari mahasiswa dengan nama yang sesuai
+    // Kode untuk Query dalam hal mencari mahasiswa yang sesuai dgn  nama yang di miliki
     $query = "SELECT * FROM mahasiswa WHERE nama = '$username' AND nim = '$MuatUlang_password'";
     $result = mysqli_query($db, $query);
 
     if (mysqli_num_rows($result) > 0) {
-        // Jika mahasiswa ditemukan dan password lama benar, update password
+        // Jika mahasiswa yang dimasukan dan ditemukan serta password lama di masukan benar maka akan dilakukan update password
         $query = "UPDATE mahasiswa SET nim = '$new_password' WHERE nama = '$username'";
         $result = mysqli_query($db, $query);
         if ($result) {
-            // Alihkan ke halaman login
+            //kemudian akan di  Alihkan ke halaman untuk login
             header("Location: ../Login/login.php");
             exit;
         } else {
-            $error = "Gagal mereset password!";
+            $error = "Gagal untuk memuat ulang/perbarui password!";
         }
     } else {
         $error = "Username tidak ditemukan atau password lama salah!";
@@ -56,21 +56,21 @@ if (isset($_POST["submit"])) {
             <p><?php echo $success; ?></p>
         <?php endif; ?>
 
-        <label for="username">Username : </label>
+        <label for="username">Masukan Username : </label>
         <input type="text" name="username" id="username">
-        <label for="MuatUlang_password">Password lama: </label>
+        <label for="MuatUlang_password">Masukan Password lama: </label>
         <input type="password" name="MuatUlang_password" id="MuatUlang_password">
-        <label for="new_password">Password Baru: </label>
+        <label for="new_password">Masukan Password Baru: </label>
         <input type="password" name="new_password" id="new_password">
-        <button type="submit" name="submit">Reset Password</button>
+        <button type="submit" name="submit">----Perbarui Password Selesai----</button>
 
         <!-- Tambahkan ini untuk membuat link dengan ikon -->
         <a href="../Login/login.php" style="display: block; margin-top: 5px; margin-left: 175px;">
-            <i class="fas fa-arrow-left"></i></a>
+        <i class="bi bi-reply-all-fill">Kembali ke login</i></a>
     </form>
 
 
 </body>
-<script src="reset.js"></script>
+<script src="muatulang.js"></script>
 
 </html>
